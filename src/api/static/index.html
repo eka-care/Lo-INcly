@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Eka deep report parsing demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Latest compiled and minified Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="static/style.css">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+fieldset{
+    background-color: #f1f1f1;
+    border: none;
+    border-radius: 2px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    padding: 0 .625em;
+}
+
+label{
+    cursor: pointer;
+    display: inline-block;
+    padding: 3px 6px;
+    text-align: right;
+    width: 150px;
+    vertical-align: top;
+}
+
+input{
+    font-size: inherit;
+}
+
+</style>
+
+  </head>
+  <body>
+    <h1>Lo-INcly - India specific automatic LOINC Linker Demo by Eka.care</h1>
+    <p id='status'>Enter the fields and get started</p>
+
+<div class="col1">
+    <form>
+      <fieldset>
+      <p>
+      <label for="test_name"> Test name: </label>
+      <input type="text" id="test_name" required/>
+      </p>
+      <p>
+      <label for="unit"> Unit: </label>
+      <input type="text" id="unit">
+      </p>
+      <label for="specimen"> Specimen: </label>
+      <input type="text" id="specimen">
+      <p>
+      <label for="method"> Method: </label>
+      <input type="text" id="method">
+      <input type="button" value="submit" id="submitButton"/>
+      </p>
+
+    </fieldset>
+    </form>
+</div>
+<br>
+<div>
+
+
+<div class="row">
+
+  <div class="column" >
+    <h2>Candidate LOINCs</h2>
+    <table id="Table" class="test_table"></table>
+  </div>
+</div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript"></script>
+  <script src="static/app.js"></script>
+  </body>
+</html>
